@@ -103,6 +103,3 @@ theme: cactus
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:BubblyFace/chandbing-blog-web.git
-  branch: [master]
