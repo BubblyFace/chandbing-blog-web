@@ -1,7 +1,26 @@
-#!/usr/bin/env rake
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+# coding:utf-8
+desc 'hexo clean'
+task 'c' do
+  system 'hexo clean'
+end
 
-require File.expand_path('../config/application', __FILE__)
+desc 'hexo generate'
+task 'g' do
+  # system 'hexo clean'
+  system 'hexo generate'
+end
 
-Blog::Application.load_tasks
+desc 'hexo deploy'
+task 'd' do
+  system 'hexo deploy'
+end
+
+desc "备份到hexo分支"
+task 'b' do
+  system 'git add --all'
+  system "git commit -a -m \"backup at #{Time.now.to_s.slice(0..-7)}\""
+  system 'git push github hexo'
+end
+
+desc "clean -> generate -> deploy -> backup"
+task :default => ['c','g','d','b']
