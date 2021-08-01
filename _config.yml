@@ -103,3 +103,10 @@ theme: cactus
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
+
+nav:
+  home: /index
+  about: /about/
+  articles: /archives/
+  projects: http://github.com/probberechts
+  LINK_NAME: URL
